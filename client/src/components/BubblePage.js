@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 import { axiosWithAuth } from "../utilities/axiosWithAuth";
@@ -8,7 +6,7 @@ import { axiosWithAuth } from "../utilities/axiosWithAuth";
 const BubblePage = (props) => {
   const [colorList, setColorList] = useState([]);
   // fetch your colors data from the server when the component mounts
-  // set that data to the colorList state property // so props? 
+  // set that data to the colorList state property // so props?; similar to the friends page in friends assignment
 
   useEffect(() => {
     axiosWithAuth().get('/api/colors')

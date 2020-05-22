@@ -18,12 +18,20 @@ const ColorList = ({ props, colors, updateColors }) => {
 
   const saveEdit = e => {
     e.preventDefault();
-    axiosWithAuth().put(`/api/color/${colorToEdit.id}`, colorToEdit);
+    axiosWithAuth()
+    .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
+    .then(res => {
+      console.log(res)
+      
+    })
     props.history.push('/bubble-page')
   };
 
   const deleteColor = color => {
     axiosWithAuth().delete(`/api/colors/${color.id}`)
+    .then(res => {
+      console.log(res)
+    })
     props.history.push('/bubble-page');
   };
 
